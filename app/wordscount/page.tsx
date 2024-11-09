@@ -7,7 +7,7 @@ const App: React.FC = () => {
   const [wordCounts, setWordCounts] = useState<Record<string, number> | null>(null);
 
   useEffect(() => {
-    const text = "私の将来の夢は宇宙飛行士です。宇宙飛行士はかっこいいです。";
+    const text = "にわにわにはにわとりがいます";
 
     fetch(`./api/tokenize?text=${encodeURIComponent(text)}`)
       .then(response => {
@@ -19,8 +19,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Word Count</h1>
+    <div className="text-white">
       {wordCounts ? (
         <ul>
           {Object.entries(wordCounts).map(([word, count]) => (
